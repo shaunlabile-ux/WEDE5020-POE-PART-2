@@ -1,0 +1,620 @@
+/* =========================================================
+   Cotlands Website - Part 2
+   External CSS stylesheet
+   ========================================================= */
+
+/* ---------- CSS Reset / Base Styles ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f7f8f5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+/* ---------- Site Header / Navigation ---------- */
+header {
+    background-color: #ffffff;
+    min-height: 72px;
+    padding: 1rem 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #1f5f4a;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+nav a {
+    padding: 0.55rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #e8f2ee;
+    color: #1f5f4a;
+    outline: none;
+}
+nav a:active {
+    transform: scale(0.98);
+}
+
+nav a.active {
+    background-color: #1f5f4a;
+    color: #ffffff;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    min-height: 560px;
+    padding: 6rem 6%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(rgba(22, 55, 45, 0.68), rgba(22, 55, 45, 0.68)),
+        url("images/banner.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    width: min(760px, 100%);
+    color: #ffffff;
+}
+
+.hero-content p {
+    max-width: 680px;
+    font-size: 1.1rem;
+}
+
+.button {
+    display: inline-block;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.8rem 1.25rem;
+    border: 2px solid #1f5f4a;
+    border-radius: 7px;
+    background-color: #1f5f4a;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+    background-color: #164637;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.second-button {
+    background-color: transparent;
+    border-color: #ffffff;
+}
+
+.second-button:hover,
+.second-button:focus {
+    background-color: #ffffff;
+    color: #1f5f4a;
+}
+
+/* ---------- General Sections ---------- */
+.welcome,
+.content-section,
+.services-section,
+.contact-section,
+.contact-form,
+.form-section,
+.call-to-action {
+    width: min(1100px, 88%);
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+.welcome {
+    text-align: center;
+}
+
+.welcome > p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.cards,
+.services-section,
+.contact-section {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.cards {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 2rem;
+}
+
+.card,
+.service-card,
+.contact-box {
+    background-color: #ffffff;
+    padding: 1.75rem;
+    border: 1px solid #e2e7e4;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover,
+.service-card:hover,
+.contact-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.card,
+.service-card,
+.contact-box {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ---------- Inner Page Banner ---------- */
+.page-banner {
+    padding: 5rem 6%;
+    text-align: center;
+    color: #ffffff;
+    background:
+        linear-gradient(rgba(31, 95, 74, 0.82), rgba(31, 95, 74, 0.82)),
+        url("images/banner.jpg") center/cover no-repeat;
+}
+
+.page-banner p {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+/* ---------- Content ---------- */
+.content-section {
+    max-width: 900px;
+}
+
+.content-section h2:not(:first-child) {
+    margin-top: 2rem;
+}
+
+.services-section {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.service-card h2 {
+    color: #1f5f4a;
+}
+
+.contact-section {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-box h2 {
+    color: #1f5f4a;
+}
+
+/* ---------- Forms ---------- */
+.form-section,
+.contact-form {
+    max-width: 800px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+label {
+    margin-top: 0.6rem;
+    font-weight: 700;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #bfc9c4;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #333;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #1f5f4a;
+    outline: 3px solid rgba(31, 95, 74, 0.16);
+}
+
+/* ---------- Call to Action ---------- */
+.call-to-action {
+    max-width: none;
+    padding: 4rem 6%;
+    text-align: center;
+    background-color: #e8f2ee;
+}
+
+.call-to-action p {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    padding: 2rem 6%;
+    text-align: center;
+    background-color: #17372d;
+    color: #ffffff;
+}
+
+footer p {
+    margin-bottom: 0.3rem;
+}
+
+/* ---------- Tablet Breakpoint ---------- */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-section,
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+}
+
+/* ---------- Mobile Breakpoint ---------- */
+@media (max-width: 600px) {
+    body {
+        font-size: 15px;
+    }
+
+    header {
+        padding: 0.9rem 4%;
+        gap: 0.75rem;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.2rem;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero {
+        min-height: 520px;
+        padding: 4rem 5%;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .welcome,
+    .content-section,
+    .services-section,
+    .contact-section,
+    .contact-form,
+    .form-section {
+        width: 90%;
+        padding: 2.8rem 0;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .page-banner {
+        padding: 3.5rem 5%;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+
+    footer {
+        padding: 1.5rem 5%;
+    }
+}
+/* ----------- Responsive Images ----------- */
+
+.card img,
+.service-card img,
+.contact-box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+
+    .card img,
+    .service-card img,
+    .contact-box img {
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .card img,
+    .service-card img,
+    .contact-box img {
+        width: 100%;
+        max-height: 220px;
+        object-fit: cover;
+    }
+
+}
+
+/* ----------- Responsive Images ----------- */
+
+.card img,
+.service-card img,
+.contact-box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+
+    .card img,
+    .service-card img,
+    .contact-box img {
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .card img,
+    .service-card img,
+    .contact-box img {
+        width: 100%;
+        max-height: 220px;
+        object-fit: cover;
+    }
+
+}
+
+/* ----------- Responsive Hero ----------- */
+
+@media (max-width: 900px) {
+
+    .hero {
+        min-height: 480px;
+        padding: 4rem 5%;
+        background-position: center;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 420px;
+        padding: 3rem 5%;
+        background-position: center;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+}
+
+/* ----------- Responsive Grid ----------- */
+
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
